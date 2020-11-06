@@ -18,7 +18,9 @@ class _MyHomePageState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('TEste'),
+        title: Text('\$Converso\$'),
+        backgroundColor: Colors.amber,
+        centerTitle: true,
       ),
       body: Center(
         child: Column(
