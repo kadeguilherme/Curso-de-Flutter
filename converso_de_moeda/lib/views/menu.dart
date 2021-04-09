@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'bolsadevalores.dart';
+
 class Menu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -79,6 +81,14 @@ class Menu extends StatelessWidget {
                     topLeft: Radius.circular(60),
                     topRight: Radius.circular(60)),
                 color: Colors.white,
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  BolsaDeValores(),
+                  BolsaDeValores(),
+                ],
               ),
             ),
           )
