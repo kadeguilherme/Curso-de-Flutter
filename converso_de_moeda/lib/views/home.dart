@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:async/async.dart';
+//import 'package:async/async.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+
+import 'menu.dart';
 
 const request = 'https://api.hgbrasil.com/finance?key=02726443';
 
@@ -16,14 +18,20 @@ class Home extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<Home> {
+  double dolar;
+  double euro;
+
+  final realController = TextEditingController();
+  final dolarController = TextEditingController();
+  final euroController = TextEditingController();
+
+  // void _realChanged(String text) {}
+  // void _dolarChanged(String text) {}
+  // void _euroChanged(String text) {}
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('\$Converso\$'),
-        backgroundColor: Colors.amber,
-        centerTitle: true,
-      ),
       body: FutureBuilder(
         future: getData(),
         builder: (context, snapshot) {
@@ -40,20 +48,10 @@ class _MyHomePageState extends State<Home> {
                   child: Text("Erro ao carregar"),
                 );
               } else {
-                return Center(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      Text(
-                        'You have pushed the button this many times:',
-                      ),
-                      Text(
-                        'counter',
-                        style: Theme.of(context).textTheme.headline4,
-                      ),
-                    ],
-                  ),
-                );
+                dolar = snapshot.data['results']['currencies']['USD']['buy'];
+                euro = snapshot.data['results']['currencies']['EUR']['buy'];
+
+                return Menu();
               }
           }
         },

@@ -12,15 +12,9 @@ class MyApp extends StatelessWidget {
       title: 'Converso',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-          hintColor: Colors.amber,
-          primaryColor: Colors.white,
-          inputDecorationTheme: InputDecorationTheme(
-            enabledBorder:
-                OutlineInputBorder(borderSide: BorderSide(color: Colors.white)),
-            focusedBorder:
-                OutlineInputBorder(borderSide: BorderSide(color: Colors.amber)),
-            hintStyle: TextStyle(color: Colors.amber),
-          )),
+        fontFamily: 'OpenSans',
+        primaryColor: Colors.white,
+      ),
       home: Home(),
     );
   }
