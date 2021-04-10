@@ -1,1 +1,1 @@
-const foto = 'assets/EUA.svg';
+const foto = 'assets/teste.svg';

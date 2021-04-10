@@ -19,15 +19,13 @@ class BolsaDeValores extends StatelessWidget {
           width: 100,
           height: 100,
           decoration: BoxDecoration(
-              border: Border.all(
-                color: Colors.red[500],
-              ),
-              borderRadius: BorderRadius.all(Radius.circular(100))),
-          child: Expanded(
-            flex: 1,
-            child: ClipRRect(
-              borderRadius: BorderRadius.all(Radius.circular(0)),
-              child: SvgPicture.asset(foto),
+            border: Border.all(color: Colors.red[500]),
+            borderRadius: BorderRadius.all(Radius.circular(100)),
+          ),
+          child: ClipOval(
+            child: SvgPicture.asset(
+              foto,
+              fit: BoxFit.cover,
             ),
           ),
         ),
